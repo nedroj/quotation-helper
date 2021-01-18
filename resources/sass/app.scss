@@ -1,0 +1,48 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@import '~@mdi/font/css/materialdesignicons.css';
+
+@import '~@fortawesome/fontawesome-pro/css/all.css';
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import 'auth.scss';
+
+@import 'minton.scss';
+
+.ajax-loader {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 99999999;
+
+    svg {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@import "mediacollection.scss";
+
+@import "./bounces";
+
+@import "./../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css";
+
+@import "./../../node_modules/summernote/dist/summernote-bs4.css";
+
+@import "./../../node_modules/select2/dist/css/select2.css";
+@import "./../../node_modules/@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css";
+
+@import "epics.scss";
+
+@import "quotation.scss";

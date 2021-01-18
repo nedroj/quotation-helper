@@ -1,0 +1,66 @@
+#
+# git remote add combell doitportalnl@ssh041.hosting-cluster.nl:auto.git
+#
+#######################################################################################
+# ___       __    ______ ______              __________                 ______        #
+# __ |     / /_______  /____  /________________  /___(_)_____________ _ ___  /______  #
+# __ | /| / /_  _ \_  __ \_  __ \  __ \_  ___/  __/_  /__  __ \_  __ `/ __  __ \  _ \ #
+# __ |/ |/ / /  __/  /_/ /  / / / /_/ /(__  )/ /_ _  / _  / / /  /_/ /___  /_/ /  __/ #
+# ____/|__/  \___//_.___//_/ /_/\____//____/ \__/ /_/  /_/ /_/_\__, /_(_)_.___/\___/  #
+#                                                            /____/                   #
+#######################################################################################
+# Autogit - config and deploy hooks                                                   #
+#######################################################################################
+# This YAML file, named as "autogit.yml" should be present                            #
+# in the root folder of your codebase                                                 #
+#######################################################################################
+
+# shared files and folders:
+shared_files: [ .env ]
+shared_folders: [ storage, public/media ]
+
+
+# Hooks should be Bash shell scripts and get executed at different stages during deploy
+# Arguments: $1 = branch, $2 = commit id, $3 = checkout folder
+hooks:
+  # SETUP: Create folder structure for newest release
+  setup_before: |
+    exit 0
+  setup_after: |
+    cd $3 && ln -s public www
+    exit 0
+
+  # INSTALL: Put code in release folder
+  install_before: |
+    exit 0
+  install_after: |
+    exit 0
+
+  # SHAREDSYMLINK: Create symlink to shared files and folders
+  #                present at every release (config, logs, ...)
+  sharedsymlink_before: |
+    cd $3 && rm -rf storage
+    cd $3 && rm -rf public/media
+    exit 0
+  sharedsymlink_after: |
+    cd $3 && composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+    cd $3 && php artisan migrate --force
+    cd $3 && php artisan cache:clear
+    cd $3 && php artisan view:clear
+    cd $3 && php artisan auth:clear-resets
+    cd $3 && php artisan route:cache
+    cd $3 && php artisan config:cache
+    cd $3 && npm ci && npm run production
+    exit 0
+
+  # SYMLINK: Set current symlink to newest release
+  symlink_before: |
+    exit 0
+  symlink_after: |
+    exit 0
+
+  # CLEANUP: Cleanup old releases, two most recent releases remaining
+  cleanup_before: |
+    exit 0
+  cleanup_after: |
+    exit 0

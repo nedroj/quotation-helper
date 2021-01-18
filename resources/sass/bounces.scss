@@ -1,0 +1,23 @@
+.container-show-bounce {
+    .row {
+        margin: 25px auto;
+    }
+}
+
+.btn-postmark {
+    background-color: #ffde00;
+    border: 1px solid rgba(0, 0, 0, .5);
+    color: #22252b;
+    font-weight: bold;
+}
+
+.email-server::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px;
+    border-radius: 7.5px;
+    background-color: var(--color);
+}

@@ -1,0 +1,35 @@
+#mediacollectiondropzone {
+    border: 2px dashed $doit-blue;
+    border-radius: 5px;
+    background: #f9f9f9;
+    padding: 54px 54px;
+    min-height: 150px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    .dz-message{
+        text-align: center;
+        margin: 2em 0;
+    }
+}
+
+.deletemedia {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: $doit-blue;
+    color: #fff;
+    margin-left: 10px;
+}

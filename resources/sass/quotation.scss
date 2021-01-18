@@ -1,0 +1,56 @@
+.successmessage {
+    color: #0b0c0f;
+    background-color: #00b600;
+    border: #23814f 1px solid;
+    padding-left: 30%;
+    border-radius: 5px;
+}
+
+.notoggle {
+    float: right;
+}
+
+table quotation {
+    table-layout: fixed;
+    width: 100%;
+    thead{
+        tr:hover{
+            cursor: pointer;
+            background-color: #929ba0;
+            th{
+
+            }
+        }
+    }
+
+    tbody {
+        tr:hover {
+            cursor: pointer;
+            background-color: #929ba0;
+
+            td:hover.notoggle {
+                cursor: default;
+            }
+        }
+
+        td {
+            word-wrap: break-word;
+
+            form {
+                float: left;
+            }
+        }
+
+    }
+
+    tbody {
+        tr:nth-of-type(odd):hover {
+            cursor: pointer;
+            background-color: #767c82;
+
+            td:hover.notoggle {
+                cursor: default;
+            }
+        }
+    }
+}
