@@ -13,11 +13,3 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group([
-        'prefix' => 'postmark',
-        'namespace' => 'Postmark',
-        'name' => 'postmark.',
-    ], function () {
-    Route::post('bounce',  'WebhookController@bounce')->name('webhook.bounce');
-});
-
