@@ -14,7 +14,7 @@
 
             <div class="text-center">
                 <a class="logo-lg">
-                    <img src="{{ asset('images/doit-logo.png') }}" alt="DO-IT portal">
+                    <img src="{{ asset('images/programming.jpg') }}" alt="Quotation portal">
                 </a>
 
                 <h1>{{ config('app.name') }}</h1>

@@ -11,28 +11,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('issuelists.index') }}" class="waves-effect waves-primary{{ request()->is('issuelists') ? ' active' : '' }}">
-                        <span class="menu-icon"><i class="far fa-home"></i></span>
-                        <span class="menu-item-title"> {{ __('Issuelists')  }} </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('email.bounces') }}" class="waves-effect waves-primary{{ request()->is('email.bounces') ? ' active' : '' }}">
-                        <span class="menu-icon"><i class="far fa-envelope"></i></span>
-                        <span class="menu-item-title"> {{ __('Email bounces')  }} </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('email.servers') }}" class="waves-effect waves-primary{{ request()->is('email.servers') ? ' active' : '' }}">
-                        <span class="menu-icon"><i class="far fa-server"></i></span>
-                        <span class="menu-item-title"> {{ __('Email servers')  }} </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                </li>
-
-                <li>
                     <a href="{{ route('users.index') }}"
                        class="waves-effect waves-primary{{ request()->is('users/*') ? ' active' : '' }}">
                         <span class="menu-icon"><i class="far fa-user-crown"></i></span>

@@ -1,7 +1,7 @@
 <div class="topbar">
     <div class="topbar-left">
         <a href="{{ route('home') }}" class="logo">
-            <img src="{{ asset('images/doit-logo.png') }}" alt="">
+            <img src="{{ asset('images/programming.jpg') }}" alt="">
         </a>
     </div>
 
